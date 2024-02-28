@@ -1,0 +1,161 @@
+openapi: 3.0.1
+info:
+  title: Headless Delivery
+  description: A Java client JAR is available for use with the group ID 'com.liferay',
+    artifact ID 'com.liferay.headless.delivery.client', and version '4.0.15'.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: v1.0
+servers:
+# Added by API Auto Mocking Plugin
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/liferayinc/headless-delivery/v1.0
+- url: http://localhost:8080/o/headless-delivery/
+paths:
+  "/employee/{employeeId}":
+    get:
+      operationId: getStudent
+      tags: ["Employee"]
+      description: Retrieves the list of student of that rollNo.
+      parameters:
+      -   name: employeeId
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        200:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Employee"
+  "/employee/{siteId}/employee-postings":
+    get:
+      operationId: getEmployees
+      tags: ["Employees"]
+      description: Retrieves the list of employee of that rollNo.
+      parameters:
+      - name: siteId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Employee"
+    post:
+      tags:
+      - Employees
+      description: Creates a new employee post.
+      operationId: postSiteEmployeePosting
+      parameters:
+      - name: siteId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeePost'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EmployeePost'
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeePost'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/EmployeePost'
+         
+components:
+  schemas:
+    Employee:
+      description: Contains all of the data for a single student.
+      properties:
+        employeeId:
+           format: int64
+           type: integer
+        name:
+          description: Name.
+          readOnly: true
+          type: string
+        adress:
+          description: Employee adress.
+          readOnly: true
+          type: string
+        phoneNo:
+          description: Employee Phoen no.
+          readOnly: true
+          format: int64
+          type: integer
+        salary:
+          description: enter employee salary
+          format: int64
+          type: integer
+        emailAdress:
+          description: Student Email Id.
+          type: string
+        doj:
+          type: string
+          description: The date the wiki page,
+          format: date-time
+          readOnly: true
+        dol:
+          type: string
+          description: The date the wiki page,
+          format: date-time
+          readOnly: true
+    EmployeePost:
+      description: Contains all of the data for a single student.
+      properties:
+        employeeId:
+          format: int64
+          type: integer
+        siteId:
+          type: string
+        name:
+          description: Name.
+          type: string
+        adress:
+          description: Employee adress.
+          type: string
+        phoneNo:
+          description: Employee Phoen no.
+          format: int64
+          type: integer
+        salary:
+          description: enter employee salary
+          format: int64
+          type: integer
+        emailAdress:
+          description: Student Email Id.
+          type: string
+        doj:
+          type: string
+          description: The date the wiki page,
+          format: date-time
+        dol:
+          type: string
+          description: The date the wiki page,
+          format: date-time
+       
+      

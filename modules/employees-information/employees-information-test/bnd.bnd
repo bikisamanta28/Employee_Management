@@ -1,0 +1,5 @@
+Bundle-Name: employees-information-test
+Bundle-SymbolicName: com.test.api.test
+Bundle-Version: 1.0.0
+-includeresource: com.test.api.client.jar=../employees-information-client/build/libs/com.test.api.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

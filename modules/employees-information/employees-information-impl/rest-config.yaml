@@ -1,0 +1,9 @@
+apiDir: "../employees-information-api/src/main/java"
+apiPackagePath: "com.test.api"
+application:
+    baseURI: "/employees-information"
+    className: "EmployeesInformationApplication"
+    name: "EmployeesInformation"
+author: "me"
+clientDir: "../employees-information-client/src/main/java"
+testDir: "../employees-information-test/src/testIntegration/java"

@@ -1,0 +1,3 @@
+Bundle-Name: employees-information-client
+Bundle-SymbolicName: com.test.api.client
+Bundle-Version: 1.0.0

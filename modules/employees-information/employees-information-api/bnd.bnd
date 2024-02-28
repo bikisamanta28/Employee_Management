@@ -1,0 +1,6 @@
+Bundle-Name: employees-information-api
+Bundle-SymbolicName: com.test.api.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.test.api.dto.v1_0,\
+	com.test.api.resource.v1_0
